@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\FAQ;
+use App\Faq;
 use Illuminate\Http\Request;
 
-class FAQController extends Controller
+class FaqController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class FAQController extends Controller
      */
     public function index()
     {
-        return view('FAQ.index');
+        $faqs = Faq::all();
+        return view('FAQ.index', compact('faqs'));
     }
 
     /**
@@ -24,7 +25,7 @@ class FAQController extends Controller
      */
     public function create()
     {
-        //
+        return view('FAQ.create');
     }
 
     /**
@@ -35,51 +36,66 @@ class FAQController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Faq::create($this->validateFaq($request));
+        return redirect(route('FAQ.index'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\FAQ  $fAQ
+     * @param  \App\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function show(FAQ $fAQ)
+    public function show(Faq $faq)
     {
-        //
+        return view('FAQ.show', compact('faq'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\FAQ  $fAQ
+     * @param  \App\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function edit(FAQ $fAQ)
+    public function edit(Faq $faq)
     {
-        //
+        return view('FAQ.edit', compact('faq'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\FAQ  $fAQ
+     * @param  \App\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, FAQ $fAQ)
+    public function update(Request $request, Faq $faq)
     {
-        //
+        $faq->update($this->validateFaq($request));
+        return redirect(route('FAQ.index'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\FAQ  $fAQ
+     * @param  \App\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function destroy(FAQ $fAQ)
+    public function destroy(Faq $faq)
     {
-        //
+        $faq->delete();
+        return redirect(route('FAQ.index'));
+    }
+
+    /**
+     * @param \Illuminate\Http\Request $request
+     * @return array
+     */
+    protected function validateFaq(Request $request): array
+    {
+        return $request->validate([
+            'question' => 'required',
+            'answer' => 'required'
+        ]);
     }
 }
