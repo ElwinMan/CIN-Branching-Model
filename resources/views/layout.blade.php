@@ -25,7 +25,7 @@
                 <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('FAQ') }}">FAQ</a>
+                <a class="nav-link" href="{{ route('FAQ.index') }}">FAQ</a>
             </li>
         </ul>
     </div>
