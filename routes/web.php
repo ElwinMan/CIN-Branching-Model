@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\InfoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,5 +20,6 @@ Route::get('/', function () {
 });
 
 Route::resources([
-    'FAQ' => FAQController::class
+    'FAQ' => FAQController::class,
+    'INFO' => InfoController::class,
 ]);
