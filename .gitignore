@@ -22,8 +22,4 @@ Homestead.json
 /.vagrant
 .phpunit.result.cache
 
-# COMPOSER AND NPM
-package.json
-package-lock.json
-composer.lock
-composer.json
+
