@@ -1,7 +1,7 @@
 # CIN-Branching-Model
 Repo for CIN Branching Model assignment with Luca Geene
 
-## Release schedule
+## Release schedule + overview
 
 | Release  | Status              | Codename    |Initial Release | Active LTS Start | Maintenance Start | End-of-life               |
 | :--:     | :---:               | :---:       | :---:          | :---:            | :---:             | :---:                     |
