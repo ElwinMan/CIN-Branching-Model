@@ -14,7 +14,7 @@ class FaqSeeder extends Seeder
     {
         Faq::insert([
             'question' => "Waarvoor is dit website gemaakt?",
-            'answer' => "Omdat het voor CIN moet",
+            'answer' => "Omdat het voor CIN moet.",
         ]);
     }
 }
