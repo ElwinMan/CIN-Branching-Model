@@ -10,6 +10,7 @@
     </style>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>@yield('title')</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -22,6 +23,9 @@
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('FAQ') }}">FAQ</a>
             </li>
         </ul>
     </div>
