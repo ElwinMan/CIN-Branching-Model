@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/FAQ', function () {
-    return view('FAQ.index');
-})->name('FAQ');
+Route::resources([
+    'FAQ' => FAQController::class
+]);
